@@ -31,6 +31,6 @@ public class RabbitMqServiceImpl implements RabbitMqService {
      */
     @Override
     public void sendBookMessage(Book book) {
-        rabbitTemplate.convertAndSend(rabbitMqProperties.getExchange(), rabbitMqProperties.getRoutingKey(), book);
+        rabbitTemplate.convertAndSend(rabbitMqProperties.getTemplate().getExchange(), rabbitMqProperties.getTemplate().getRoutingKey(), book);
     }
 }
